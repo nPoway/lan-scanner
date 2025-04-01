@@ -31,9 +31,14 @@
 #define DEFAULT_CELLULAR_INTERFACE @"pdp_ip0"
 #endif
 
+#ifndef DEBUG
+#define DEBUG 1
+#endif
+
 #ifndef deb
 #define deb(format, ...) {if(DEBUG){NSString *__oo = [NSString stringWithFormat: @"%s:%@", __PRETTY_FUNCTION__, [NSString stringWithFormat:format, ## __VA_ARGS__]]; NSLog(@"%@", __oo); }}
 #endif
+
 
 #define BUFLEN (sizeof(struct rt_msghdr) + 512)
 #define SEQ 9999
